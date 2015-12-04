@@ -219,7 +219,6 @@ namespace Jackett.Services
             }
             else
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Jackett-public");
             }
         }
 
