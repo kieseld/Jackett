@@ -188,7 +188,7 @@ namespace Jackett.Services
 
 #if DEBUG
             // When we are running in debug use the source files
-            var sourcePath = Path.GetFullPath(Path.Combine(ApplicationFolder(), "..\\..\\..\\Jackett\\Content"));
+            var sourcePath = Path.GetFullPath(Path.Combine(ApplicationFolder(), "..\\..\\..\\Jackett-public\\Content"));
             if (Directory.Exists(sourcePath))
             {
                 dir = sourcePath;
@@ -215,11 +215,11 @@ namespace Jackett.Services
         {
             if (System.Environment.OSVersion.Platform == PlatformID.Unix)
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett");
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett-public");
             }
             else
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Jackett");
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Jackett-public");
             }
         }
 
