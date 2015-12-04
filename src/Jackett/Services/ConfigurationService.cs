@@ -69,7 +69,7 @@ namespace Jackett.Services
             {
                 try
                 {
-                    string oldDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett");
+                    string oldDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett-public");
                     if (Directory.Exists(oldDir))
                     {
 
@@ -107,7 +107,7 @@ namespace Jackett.Services
 
         public void PerformMigration()
         {
-            var oldDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett");
+            var oldDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Jackett-public");
             if (Directory.Exists(oldDir))
             {
                 foreach (var file in Directory.GetFiles(oldDir, "*", SearchOption.AllDirectories))
@@ -219,6 +219,7 @@ namespace Jackett.Services
             }
             else
             {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Jackett-public");
             }
         }
 
