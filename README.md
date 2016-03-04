@@ -64,3 +64,41 @@ This fork will use: /home/{username}/.config/Jackett-public
  * [Torrentz](https://torrentz.eu/)
  * [TV Chaos UK](https://tvchaosuk.com/)
 
+## Compiling jackett-public
+
+These instructions are to compile on a windows host
+
+* Install chocolatey pkg manager
+
+* Install build dependancies
+	* `choco install -y sourcetree mono visualstudio2015community innosetup 7zip`
+
+* Add 'C:\Program Files (x86)\Inno Setup 5' to your system's PATH environment variable
+	* Log out your user, log back in again to refresh $PATH (or kill / restart explorer.exe)
+	* Open a cmdline and check that 'iscc.exe' is found / can be executed
+
+* Use sourcetree to 'git clone' this repo raspdealer/Jackett
+
+* Open Visual Studio
+	* Open the src/ subfolder, select 'Jackett.sln' project file
+	* Go to Build menu --> Build Solution
+
+* Open a new cmd prompt, cd into git Jackett repo folder
+
+* run `Build-mono.bat`
+	* This generates some product files, including Output/setup.exe, and 'build.mono' folder
+
+* Rename 'build.mono' folder --> 'Jackett-public'
+
+* Right click in explorer --> Zip --> 'Add to archive'
+	* Select 'tar' archive format
+	* Name: 'Jackett-public.Binaries.Mono.tar'
+
+* Copy file 'Jackett-public.Binaries.Mono.tar' to linux host
+	* Run `gzip Jackett-public.Binaries.Mono.tar`
+
+* Git tag the latest commit which was build from
+	* Upload to github 'releases' page, add file under new version had just git-taged
+
+
+

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Jackett"
-#define MyAppVersion GetFileVersion("build.windows/Jackett.dll")
+#define MyAppVersion GetFileVersion("build.mono/Jackett.dll")
 #define MyAppPublisher "Jackett  Inc."
 #define MyAppURL "https://github.com/Jackett/Jackett"
 #define MyAppExeName "JackettTray.exe"
@@ -36,8 +36,8 @@ Name: "windowsService"; Description: "Install as a Windows Service"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "build.windows\JackettTray.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "build.windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "build.mono\JackettTray.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build.mono\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
